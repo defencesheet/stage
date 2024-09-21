@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333;
+}
+h1{
+    color: white;
+    font-weight: bolder;
+}
+.card-container {
+    display: flex; /* Use flexbox */
+    justify-content: space-around; /* Align items evenly along the main axis */
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+    margin: 0 10px; /* Add some margin for spacing between cards */
+    border-radius: 50%; /* Make the cards circular */
+    overflow: hidden; /* Ensure the content doesn't overflow */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 50%; /* Make front and back of the card circular */
+}
+
+.flip-card-front img, .flip-card-back {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the entire card */
+    border-radius: 50%; /* Make the image circular */
+}
+
+.flip-card-front {
+    background-color:black;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #9acef1;
+    color: black;
+    transform: rotateY(180deg);
+}
+footer {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 4px ;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+header {
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 4px ;
+    position: relative;
+    width: 100%;
+    
+}
